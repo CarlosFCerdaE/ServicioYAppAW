@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AWWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="GetAllProductCategoriesAndSubcategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetProductReviews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetProductSalesByYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="LocationDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Production">
+          <Parameter Name="LOCATIONID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="LocationGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Production" />
+        <Function Name="LocationSave" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Production">
+          <Parameter Name="LOCATIONID" Type="int" Mode="In" />
+          <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+          <Parameter Name="COSTRATE" Type="smallmoney" Mode="In" />
+          <Parameter Name="AVAILABILITY" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="CreditCardDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Sales">
+          <Parameter Name="CREDITCARDID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CreditCardGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Sales" />
+        <Function Name="CreditCardSave" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Sales">
+          <Parameter Name="CreditCardId" Type="int" Mode="In" />
+          <Parameter Name="CardType" Type="varchar" Mode="In" />
+          <Parameter Name="CardNumber" Type="varchar" Mode="In" />
+          <Parameter Name="ExpMonth" Type="int" Mode="In" />
+          <Parameter Name="ExpYear" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="AWWModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AWWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AdventureWorks2019Entities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="GetAllProductCategoriesAndSubcategories" ReturnType="Collection(AWWModel.GetAllProductCategoriesAndSubcategories_Result)" />
+          <FunctionImport Name="GetProductReviews" ReturnType="Collection(AWWModel.GetProductReviews_Result)" />
+          <FunctionImport Name="GetProductSalesByYear" ReturnType="Collection(AWWModel.GetProductSalesByYear_Result)" />
+          <FunctionImport Name="LocationDelete" ReturnType="Collection(AWWModel.LocationDelete_Result)">
+            <Parameter Name="LOCATIONID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="LocationGetAll" ReturnType="Collection(AWWModel.LocationGetAll_Result)" />
+          <FunctionImport Name="LocationSave" ReturnType="Collection(AWWModel.LocationSave_Result)">
+            <Parameter Name="LOCATIONID" Mode="In" Type="Int32" />
+            <Parameter Name="NAME" Mode="In" Type="String" />
+            <Parameter Name="COSTRATE" Mode="In" Type="Decimal" />
+            <Parameter Name="AVAILABILITY" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="CreditCardDelete" ReturnType="Collection(AWWModel.CreditCardDelete_Result)">
+            <Parameter Name="CREDITCARDID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CreditCardGetAll" ReturnType="Collection(AWWModel.CreditCardGetAll_Result)" />
+          <FunctionImport Name="CreditCardSave" ReturnType="Collection(AWWModel.CreditCardSave_Result)">
+            <Parameter Name="CreditCardId" Mode="In" Type="Int32" />
+            <Parameter Name="CardType" Mode="In" Type="String" />
+            <Parameter Name="CardNumber" Mode="In" Type="String" />
+            <Parameter Name="ExpMonth" Mode="In" Type="Int32" />
+            <Parameter Name="ExpYear" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GetAllProductCategoriesAndSubcategories_Result">
+          <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SubcategoryName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetProductReviews_Result">
+          <Property Type="Int32" Name="ProductReviewID" Nullable="false" />
+          <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="ProductModelID" Nullable="true" />
+          <Property Type="String" Name="ModelName" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="ReviewDate" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="Rating" Nullable="false" />
+          <Property Type="String" Name="Comments" Nullable="true" MaxLength="3850" />
+        </ComplexType>
+        <ComplexType Name="GetProductSalesByYear_Result">
+          <Property Type="Int32" Name="SalesYear" Nullable="true" />
+          <Property Type="Decimal" Name="TotalSales" Nullable="true" Precision="38" Scale="6" />
+        </ComplexType>
+        <ComplexType Name="LocationDelete_Result">
+          <Property Type="Int32" Name="ESTADO" Nullable="false" />
+          <Property Type="String" Name="MENSAJE" Nullable="false" MaxLength="16" />
+        </ComplexType>
+        <ComplexType Name="LocationGetAll_Result">
+          <Property Type="Int16" Name="LocationID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="CostRate" Nullable="false" Precision="10" />
+          <Property Type="Decimal" Name="Availability" Nullable="false" Precision="8" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="LocationSave_Result">
+          <Property Type="Int32" Name="estado" Nullable="true" />
+          <Property Type="String" Name="mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="CreditCardDelete_Result">
+          <Property Type="Int32" Name="ESTADO" Nullable="false" />
+          <Property Type="String" Name="MENSAJE" Nullable="false" MaxLength="18" />
+        </ComplexType>
+        <ComplexType Name="CreditCardGetAll_Result">
+          <Property Type="Int32" Name="CreditCardID" Nullable="false" />
+          <Property Type="String" Name="CardType" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CardNumber" Nullable="false" MaxLength="25" />
+          <Property Type="Byte" Name="ExpMonth" Nullable="false" />
+          <Property Type="Int16" Name="ExpYear" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="CreditCardSave_Result">
+          <Property Type="Int32" Name="estado" Nullable="true" />
+          <Property Type="String" Name="mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AWWModelStoreContainer" CdmEntityContainer="AdventureWorks2019Entities" >
+          <FunctionImportMapping FunctionImportName="GetAllProductCategoriesAndSubcategories" FunctionName="AWWModel.Store.GetAllProductCategoriesAndSubcategories">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AWWModel.GetAllProductCategoriesAndSubcategories_Result">
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="SubcategoryName" ColumnName="SubcategoryName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetProductReviews" FunctionName="AWWModel.Store.GetProductReviews">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AWWModel.GetProductReviews_Result">
+                <ScalarProperty Name="ProductReviewID" ColumnName="ProductReviewID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductModelID" ColumnName="ProductModelID" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="ReviewDate" ColumnName="ReviewDate" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetProductSalesByYear" FunctionName="AWWModel.Store.GetProductSalesByYear">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AWWModel.GetProductSalesByYear_Result">
+                <ScalarProperty Name="SalesYear" ColumnName="SalesYear" />
+                <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="LocationDelete" FunctionName="AWWModel.Store.LocationDelete">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AWWModel.LocationDelete_Result">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="MENSAJE" ColumnName="MENSAJE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="LocationGetAll" FunctionName="AWWModel.Store.LocationGetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AWWModel.LocationGetAll_Result">
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CostRate" ColumnName="CostRate" />
+                <ScalarProperty Name="Availability" ColumnName="Availability" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="LocationSave" FunctionName="AWWModel.Store.LocationSave">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AWWModel.LocationSave_Result">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CreditCardDelete" FunctionName="AWWModel.Store.CreditCardDelete">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AWWModel.CreditCardDelete_Result">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="MENSAJE" ColumnName="MENSAJE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CreditCardGetAll" FunctionName="AWWModel.Store.CreditCardGetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AWWModel.CreditCardGetAll_Result">
+                <ScalarProperty Name="CreditCardID" ColumnName="CreditCardID" />
+                <ScalarProperty Name="CardType" ColumnName="CardType" />
+                <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+                <ScalarProperty Name="ExpMonth" ColumnName="ExpMonth" />
+                <ScalarProperty Name="ExpYear" ColumnName="ExpYear" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CreditCardSave" FunctionName="AWWModel.Store.CreditCardSave">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AWWModel.CreditCardSave_Result">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

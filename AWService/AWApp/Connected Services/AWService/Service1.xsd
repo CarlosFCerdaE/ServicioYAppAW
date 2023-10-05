@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AWService.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AWService.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfGetAllProductCategoriesAndSubcategories_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetAllProductCategoriesAndSubcategories_Result" nillable="true" type="tns:GetAllProductCategoriesAndSubcategories_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetAllProductCategoriesAndSubcategories_Result" nillable="true" type="tns:ArrayOfGetAllProductCategoriesAndSubcategories_Result" />
+  <xs:complexType name="GetAllProductCategoriesAndSubcategories_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubcategoryName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllProductCategoriesAndSubcategories_Result" nillable="true" type="tns:GetAllProductCategoriesAndSubcategories_Result" />
+  <xs:complexType name="ArrayOfGetProductReviews_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetProductReviews_Result" nillable="true" type="tns:GetProductReviews_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetProductReviews_Result" nillable="true" type="tns:ArrayOfGetProductReviews_Result" />
+  <xs:complexType name="GetProductReviews_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductModelID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductReviewID" type="xs:int" />
+      <xs:element minOccurs="0" name="Rating" type="xs:int" />
+      <xs:element minOccurs="0" name="ReviewDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProductReviews_Result" nillable="true" type="tns:GetProductReviews_Result" />
+  <xs:complexType name="ArrayOfGetProductSalesByYear_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetProductSalesByYear_Result" nillable="true" type="tns:GetProductSalesByYear_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetProductSalesByYear_Result" nillable="true" type="tns:ArrayOfGetProductSalesByYear_Result" />
+  <xs:complexType name="GetProductSalesByYear_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SalesYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalSales" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProductSalesByYear_Result" nillable="true" type="tns:GetProductSalesByYear_Result" />
+  <xs:complexType name="ArrayOfCreditCardGetAll_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreditCardGetAll_Result" nillable="true" type="tns:CreditCardGetAll_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCreditCardGetAll_Result" nillable="true" type="tns:ArrayOfCreditCardGetAll_Result" />
+  <xs:complexType name="CreditCardGetAll_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditCardID" type="xs:int" />
+      <xs:element minOccurs="0" name="ExpMonth" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="ExpYear" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreditCardGetAll_Result" nillable="true" type="tns:CreditCardGetAll_Result" />
+  <xs:complexType name="CreditCardSave_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreditCardSave_Result" nillable="true" type="tns:CreditCardSave_Result" />
+  <xs:complexType name="CreditCardDelete_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ESTADO" type="xs:int" />
+      <xs:element minOccurs="0" name="MENSAJE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreditCardDelete_Result" nillable="true" type="tns:CreditCardDelete_Result" />
+  <xs:complexType name="ArrayOfLocationGetAll_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocationGetAll_Result" nillable="true" type="tns:LocationGetAll_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocationGetAll_Result" nillable="true" type="tns:ArrayOfLocationGetAll_Result" />
+  <xs:complexType name="LocationGetAll_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Availability" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CostRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:short" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocationGetAll_Result" nillable="true" type="tns:LocationGetAll_Result" />
+  <xs:complexType name="LocationSave_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocationSave_Result" nillable="true" type="tns:LocationSave_Result" />
+  <xs:complexType name="LocationDelete_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ESTADO" type="xs:int" />
+      <xs:element minOccurs="0" name="MENSAJE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocationDelete_Result" nillable="true" type="tns:LocationDelete_Result" />
+</xs:schema>

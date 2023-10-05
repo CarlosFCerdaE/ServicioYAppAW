@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AWWModelStoreContainer" CdmEntityContainer="AdventureWorks2019Entities">
+    <FunctionImportMapping FunctionImportName="GetAllProductCategoriesAndSubcategories" FunctionName="AWWModel.Store.GetAllProductCategoriesAndSubcategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AWWModel.GetAllProductCategoriesAndSubcategories_Result">
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="SubcategoryName" ColumnName="SubcategoryName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetProductReviews" FunctionName="AWWModel.Store.GetProductReviews">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AWWModel.GetProductReviews_Result">
+          <ScalarProperty Name="ProductReviewID" ColumnName="ProductReviewID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductModelID" ColumnName="ProductModelID" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="ReviewDate" ColumnName="ReviewDate" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetProductSalesByYear" FunctionName="AWWModel.Store.GetProductSalesByYear">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AWWModel.GetProductSalesByYear_Result">
+          <ScalarProperty Name="SalesYear" ColumnName="SalesYear" />
+          <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LocationDelete" FunctionName="AWWModel.Store.LocationDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AWWModel.LocationDelete_Result">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="MENSAJE" ColumnName="MENSAJE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LocationGetAll" FunctionName="AWWModel.Store.LocationGetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AWWModel.LocationGetAll_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CostRate" ColumnName="CostRate" />
+          <ScalarProperty Name="Availability" ColumnName="Availability" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LocationSave" FunctionName="AWWModel.Store.LocationSave">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AWWModel.LocationSave_Result">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CreditCardDelete" FunctionName="AWWModel.Store.CreditCardDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AWWModel.CreditCardDelete_Result">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="MENSAJE" ColumnName="MENSAJE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CreditCardGetAll" FunctionName="AWWModel.Store.CreditCardGetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AWWModel.CreditCardGetAll_Result">
+          <ScalarProperty Name="CreditCardID" ColumnName="CreditCardID" />
+          <ScalarProperty Name="CardType" ColumnName="CardType" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="ExpMonth" ColumnName="ExpMonth" />
+          <ScalarProperty Name="ExpYear" ColumnName="ExpYear" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CreditCardSave" FunctionName="AWWModel.Store.CreditCardSave">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AWWModel.CreditCardSave_Result">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

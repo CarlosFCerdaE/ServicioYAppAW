@@ -1,0 +1,12 @@
+C:\inetpub\wwwroot\AWService\AWService\bin\AWService.dll.config
+C:\inetpub\wwwroot\AWService\AWService\bin\AWService.dll
+C:\inetpub\wwwroot\AWService\AWService\bin\AWService.pdb
+C:\inetpub\wwwroot\AWService\AWService\bin\EntityFramework.dll
+C:\inetpub\wwwroot\AWService\AWService\bin\EntityFramework.SqlServer.dll
+C:\inetpub\wwwroot\AWService\AWService\bin\EntityFramework.xml
+C:\inetpub\wwwroot\AWService\AWService\bin\EntityFramework.SqlServer.xml
+C:\inetpub\wwwroot\AWService\AWService\obj\Release\AWService.csproj.AssemblyReference.cache
+C:\inetpub\wwwroot\AWService\AWService\obj\Release\AWService.csproj.CoreCompileInputs.cache
+C:\inetpub\wwwroot\AWService\AWService\obj\Release\AWService.csproj.CopyComplete
+C:\inetpub\wwwroot\AWService\AWService\obj\Release\AWService.dll
+C:\inetpub\wwwroot\AWService\AWService\obj\Release\AWService.pdb

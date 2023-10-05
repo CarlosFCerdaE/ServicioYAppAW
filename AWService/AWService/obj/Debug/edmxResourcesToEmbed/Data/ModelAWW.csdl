@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AWWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AdventureWorks2019Entities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="GetAllProductCategoriesAndSubcategories" ReturnType="Collection(AWWModel.GetAllProductCategoriesAndSubcategories_Result)" />
+    <FunctionImport Name="GetProductReviews" ReturnType="Collection(AWWModel.GetProductReviews_Result)" />
+    <FunctionImport Name="GetProductSalesByYear" ReturnType="Collection(AWWModel.GetProductSalesByYear_Result)" />
+    <FunctionImport Name="LocationDelete" ReturnType="Collection(AWWModel.LocationDelete_Result)">
+      <Parameter Name="LOCATIONID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LocationGetAll" ReturnType="Collection(AWWModel.LocationGetAll_Result)" />
+    <FunctionImport Name="LocationSave" ReturnType="Collection(AWWModel.LocationSave_Result)">
+      <Parameter Name="LOCATIONID" Mode="In" Type="Int32" />
+      <Parameter Name="NAME" Mode="In" Type="String" />
+      <Parameter Name="COSTRATE" Mode="In" Type="Decimal" />
+      <Parameter Name="AVAILABILITY" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="CreditCardDelete" ReturnType="Collection(AWWModel.CreditCardDelete_Result)">
+      <Parameter Name="CREDITCARDID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CreditCardGetAll" ReturnType="Collection(AWWModel.CreditCardGetAll_Result)" />
+    <FunctionImport Name="CreditCardSave" ReturnType="Collection(AWWModel.CreditCardSave_Result)">
+      <Parameter Name="CreditCardId" Mode="In" Type="Int32" />
+      <Parameter Name="CardType" Mode="In" Type="String" />
+      <Parameter Name="CardNumber" Mode="In" Type="String" />
+      <Parameter Name="ExpMonth" Mode="In" Type="Int32" />
+      <Parameter Name="ExpYear" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetAllProductCategoriesAndSubcategories_Result">
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SubcategoryName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetProductReviews_Result">
+    <Property Type="Int32" Name="ProductReviewID" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="ProductModelID" Nullable="true" />
+    <Property Type="String" Name="ModelName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ReviewDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Rating" Nullable="false" />
+    <Property Type="String" Name="Comments" Nullable="true" MaxLength="3850" />
+  </ComplexType>
+  <ComplexType Name="GetProductSalesByYear_Result">
+    <Property Type="Int32" Name="SalesYear" Nullable="true" />
+    <Property Type="Decimal" Name="TotalSales" Nullable="true" Precision="38" Scale="6" />
+  </ComplexType>
+  <ComplexType Name="LocationDelete_Result">
+    <Property Type="Int32" Name="ESTADO" Nullable="false" />
+    <Property Type="String" Name="MENSAJE" Nullable="false" MaxLength="16" />
+  </ComplexType>
+  <ComplexType Name="LocationGetAll_Result">
+    <Property Type="Int16" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="CostRate" Nullable="false" Precision="10" />
+    <Property Type="Decimal" Name="Availability" Nullable="false" Precision="8" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="LocationSave_Result">
+    <Property Type="Int32" Name="estado" Nullable="true" />
+    <Property Type="String" Name="mensaje" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="CreditCardDelete_Result">
+    <Property Type="Int32" Name="ESTADO" Nullable="false" />
+    <Property Type="String" Name="MENSAJE" Nullable="false" MaxLength="18" />
+  </ComplexType>
+  <ComplexType Name="CreditCardGetAll_Result">
+    <Property Type="Int32" Name="CreditCardID" Nullable="false" />
+    <Property Type="String" Name="CardType" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CardNumber" Nullable="false" MaxLength="25" />
+    <Property Type="Byte" Name="ExpMonth" Nullable="false" />
+    <Property Type="Int16" Name="ExpYear" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="CreditCardSave_Result">
+    <Property Type="Int32" Name="estado" Nullable="true" />
+    <Property Type="String" Name="mensaje" Nullable="true" MaxLength="500" />
+  </ComplexType>
+</Schema>
